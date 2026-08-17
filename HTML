@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Toddler Activity Hub 🎈</title>
+  <!-- Google Fonts for friendly rounded typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Global Top Bar -->
+    <header class="top-bar">
+      <button id="menu-btn" class="icon-btn hidden">🏠 Menu</button>
+      <div class="top-controls">
+        <button id="theme-btn" class="icon-btn">🎨 Theme</button>
+        <button id="music-btn" class="icon-btn">🎵 Music: OFF</button>
+      </div>
+      <div class="score-board">⭐ <span id="star-count">0</span></div>
+    </header>
+
+    <!-- Main Menu View -->
+    <main id="view-menu" class="view">
+      <h1>Toddler Activity Hub 🎈</h1>
+      <p class="subtitle">Choose an activity to play!</p>
+
+      <div class="menu-grid">
+        <button class="menu-card" data-game="shapes">
+          <span class="card-icon">🔷</span>
+          <span class="card-title">Shape Match</span>
+        </button>
+        <button class="menu-card" data-game="animals">
+          <span class="card-icon">🦁</span>
+          <span class="card-title">Animal Safari</span>
+        </button>
+        <button class="menu-card" data-game="balloons">
+          <span class="card-icon">🎈</span>
+          <span class="card-title">Pop Balloon</span>
+        </button>
+        <button class="menu-card" data-game="monster">
+          <span class="card-icon">👾</span>
+          <span class="card-title">Hungry Monster</span>
+        </button>
+      </div>
+    </main>
+
+    <!-- Game 1: Shape Match View -->
+    <section id="view-shapes" class="view hidden">
+      <h2>Shape Match!</h2>
+      <div class="difficulty-picker">
+        <button class="diff-btn active" data-mode="easy">Easy (2)</button>
+        <button class="diff-btn" data-mode="medium">Medium (3)</button>
+        <button class="diff-btn" data-mode="hard">Hard (4)</button>
+      </div>
+      <div class="target-zone">
+        <div id="shape-target" class="shape-slot">
+          <span class="slot-label">Drag or Tap Here!</span>
+        </div>
+      </div>
+      <div class="message" id="shape-msg">Match the shape!</div>
+      <div class="choices-zone" id="shape-choices"></div>
+      <button id="shape-next" class="action-btn hidden">Play Again! 🎨</button>
+    </section>
+
+    <!-- Game 2: Animal Safari View -->
+    <section id="view-animals" class="view hidden">
+      <h2>Animal Safari 🦁</h2>
+      <p class="subtitle" id="animal-msg">Tap an animal to hear them speak!</p>
+      <div class="animal-grid">
+        <button class="animal-btn" data-animal="Cat" data-sound="cat">
+          <span class="emoji">🐱</span>
+          <span class="label">Cat</span>
+        </button>
+        <button class="animal-btn" data-animal="Dog" data-sound="dog">
+          <span class="emoji">🐶</span>
+          <span class="label">Dog</span>
+        </button>
+        <button class="animal-btn" data-animal="Cow" data-sound="cow">
+          <span class="emoji">🐮</span>
+          <span class="label">Cow</span>
+        </button>
+        <button class="animal-btn" data-animal="Duck" data-sound="duck">
+          <span class="emoji">🦆</span>
+          <span class="label">Duck</span>
+        </button>
+        <button class="animal-btn" data-animal="Lion" data-sound="lion">
+          <span class="emoji">🦁</span>
+          <span class="label">Lion</span>
+        </button>
+        <button class="animal-btn" data-animal="Pig" data-sound="pig">
+          <span class="emoji">🐷</span>
+          <span class="label">Pig</span>
+        </button>
+        <button class="animal-btn" data-animal="Monkey" data-sound="monkey">
+          <span class="emoji">🐵</span>
+          <span class="label">Monkey</span>
+        </button>
+        <button class="animal-btn" data-animal="Elephant" data-sound="elephant">
+          <span class="emoji">🐘</span>
+          <span class="label">Elephant</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Game 3: Pop The Balloon View -->
+    <section id="view-balloons" class="view hidden">
+      <h2>Pop The Balloons! 🎈</h2>
+      <p class="subtitle" id="balloon-target-text">Pop in order: 1</p>
+      <div id="balloon-sky" class="sky"></div>
+    </section>
+
+    <!-- Game 4: Hungry Monster View -->
+    <section id="view-monster" class="view hidden">
+      <h2>Hungry Monster 👾</h2>
+      <div class="monster-space">
+        <div id="monster-avatar" class="monster">👾</div>
+      </div>
+      <p class="speech-bubble" id="monster-speech">Feed me a RED apple! 🍎</p>
+      <div class="food-tray" id="food-tray"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
